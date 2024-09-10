@@ -1,0 +1,29 @@
+body {
+  background: #ffd1dc;
+}
+
+#tickInput {
+  background: #ffebef;
+  opacity: 0.8;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#arrowSymbol {
+  margin: 36px 0;
+}
+
+/* #dateTimeInput:hover {
+  cursor: pointer;
+}
+
+#dateTimeInput {
+  background: #ffb8c9;
+  opacity: 0.8;
+} */
+ #convertResult {
+  /* color: #ff85a2; */
+  font-size: 28px;
+  font-weight: 400;
+ }
