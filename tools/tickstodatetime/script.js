@@ -44,16 +44,30 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
   
   const copyBtn = document.querySelector("#copyBtn");
+  let copyTooltip = null;
+  
   copyBtn.addEventListener("click", function () {
     const text = resultTicksElement.value;
     navigator.clipboard.writeText(text).then(function () {
-      const tooltip = new bootstrap.Tooltip(copyBtn);
+      // Dispose existing tooltip if it exists
+      if (copyTooltip) {
+        copyTooltip.dispose();
+      }
+      
+      // Update title and create new tooltip
       copyBtn.setAttribute("data-bs-title", "Copied!");
-      tooltip.show();
+      copyTooltip = new bootstrap.Tooltip(copyBtn);
+      copyTooltip.show();
+      
+      // Reset after delay
       setTimeout(function () {
-        tooltip.hide();
+        if (copyTooltip) {
+          copyTooltip.hide();
+          copyTooltip.dispose();
+          copyTooltip = null;
+        }
         copyBtn.setAttribute("data-bs-title", "Copy to clipboard");
-      }, 2000);
+      }, 1500);
     });
   });
   

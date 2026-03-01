@@ -113,15 +113,15 @@ body.theme-blue #convertResultTicks {
 }
 
 body.theme-black {
-  background: #1a1a1a;
+  background: #0f1419;
   color: #e0e0e0;
 }
 
 body.theme-black #tickInput,
 body.theme-black #datetimeInput {
-  background: #2a2a2a;
+  background: #1a2735;
   color: #e0e0e0;
-  border-color: #444;
+  border-color: #3a4755;
 }
 
 body.theme-black #convertResult {
@@ -129,13 +129,17 @@ body.theme-black #convertResult {
 }
 
 body.theme-black #convertResultTicks {
-  background: #2a2a2a;
+  background: #1a2735;
   color: #e0e0e0;
-  border-color: #444;
+  border-color: #3a4755;
 }
 
 body.theme-black .text-muted {
   color: #999 !important;
+}
+
+body.theme-black #arrowSymbol {
+  color: #e0e0e0;
 }
 
 body.theme-white {
