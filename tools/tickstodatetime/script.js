@@ -1,7 +1,8 @@
 function convertTicksToDateTime(ticks) {
-  let ticksToMicroTime = ticks / 10000;
-  let epochMicroTimeDiff = Math.abs(new Date(0, 0, 1).setFullYear(1));
-  return new Date(ticksToMicroTime - epochMicroTimeDiff);
+  // Ticks from 0001-01-01 to 1970-01-01 (Unix epoch) = 621355968000000000
+  const epochDiff = 621355968000000000;
+  const milliseconds = (ticks - epochDiff) / 10000;
+  return new Date(milliseconds);
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
