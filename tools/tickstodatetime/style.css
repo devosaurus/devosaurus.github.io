@@ -10,20 +10,148 @@ body {
   margin-right: 10%;
 }
 
+#datetimeInput {
+  background: #ffebef;
+  opacity: 0.8;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 #arrowSymbol {
   margin: 36px 0;
 }
 
-/* #dateTimeInput:hover {
-  cursor: pointer;
-}
-
-#dateTimeInput {
-  background: #ffb8c9;
-  opacity: 0.8;
-} */
- #convertResult {
-  /* color: #ff85a2; */
+#convertResult {
   font-size: 28px;
   font-weight: 400;
- }
+  margin-bottom: 0;
+}
+
+#convertResultTicks {
+  background: #fff;
+  opacity: 0.9;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  border: 1px solid #ffc0d0;
+}
+
+#ticksResultGroup {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#themeSwitcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.themeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.themeBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.themeBtn.active {
+  border-color: #666;
+  box-shadow: inset 0 0 0 2px white;
+}
+
+/* Theme color variables */
+body.theme-pink {
+  background: #ffd1dc;
+}
+
+body.theme-pink #tickInput,
+body.theme-pink #datetimeInput {
+  background: #ffebef;
+  border-color: #ffc0d0;
+}
+
+body.theme-pink #convertResultTicks {
+  border-color: #ffc0d0;
+}
+
+body.theme-green {
+  background: #d1ffd8;
+}
+
+body.theme-green #tickInput,
+body.theme-green #datetimeInput {
+  background: #e8fff0;
+  border-color: #a7ffc4;
+}
+
+body.theme-green #convertResultTicks {
+  border-color: #a7ffc4;
+}
+
+body.theme-blue {
+  background: #d1e7ff;
+}
+
+body.theme-blue #tickInput,
+body.theme-blue #datetimeInput {
+  background: #e8f4ff;
+  border-color: #a7d9ff;
+}
+
+body.theme-blue #convertResultTicks {
+  border-color: #a7d9ff;
+}
+
+body.theme-black {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.theme-black #tickInput,
+body.theme-black #datetimeInput {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.theme-black #convertResult {
+  color: #e0e0e0;
+}
+
+body.theme-black #convertResultTicks {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.theme-black .text-muted {
+  color: #999 !important;
+}
+
+body.theme-white {
+  background: #ffffff;
+}
+
+body.theme-white #tickInput,
+body.theme-white #datetimeInput {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+body.theme-white #convertResultTicks {
+  border-color: #dee2e6;
+}
+
+body.theme-white .text-muted {
+  color: #6c757d !important;
+}
