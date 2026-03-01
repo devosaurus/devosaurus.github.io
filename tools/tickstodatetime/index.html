@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -42,6 +42,85 @@
         </svg>
       </div>
       <p id="convertResult">0000-00-00T00:00:00.000Z</p>
+      <small class="text-muted">(UTC time)</small>
+
+      <hr class="my-5" />
+
+      <div class="input-group">
+        <input
+          type="datetime-local"
+          id="datetimeInput"
+          class="form-control"
+          placeholder="Pick a datetime"
+        />
+      </div>
+      <small class="text-muted">(Local time)</small>
+      <div id="arrowSymbol">
+        <svg
+          width="24"
+          height="24"
+          xmlns="http://www.w3.org/2000/svg"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+        >
+          <path
+            d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"
+          />
+        </svg>
+      </div>
+      <div class="input-group">
+        <div class="input-group" id="ticksResultGroup">
+          <input
+            type="text"
+            id="convertResultTicks"
+            class="form-control"
+            value="0"
+            readonly
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="copyBtn"
+            data-bs-toggle="tooltip"
+            title="Copy to clipboard"
+          >
+            Copy
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="themeSwitcher">
+      <button
+        class="themeBtn"
+        data-theme="pink"
+        style="background-color: #ffd1dc"
+        title="Pink"
+      ></button>
+      <button
+        class="themeBtn"
+        data-theme="green"
+        style="background-color: #d1ffd8"
+        title="Green"
+      ></button>
+      <button
+        class="themeBtn"
+        data-theme="blue"
+        style="background-color: #d1e7ff"
+        title="Blue"
+      ></button>
+      <button
+        class="themeBtn"
+        data-theme="black"
+        style="background-color: #2a2a2a"
+        title="Black"
+      ></button>
+      <button
+        class="themeBtn"
+        data-theme="white"
+        style="background-color: #ffffff; border: 1px solid #ccc"
+        title="White"
+      ></button>
     </div>
   </body>
 </html>
