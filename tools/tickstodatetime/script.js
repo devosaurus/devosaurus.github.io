@@ -7,7 +7,7 @@ function convertTicksToDateTime(ticks) {
 }
 
 function convertDateTimeToTicks(dateStr) {
-  // dateStr format from datetime-local input: "YYYY-MM-DDTHH:mm"
+  // dateStr format from datetime-local input: "YYYY-MM-DDTHH:mm:ss" (with step="1" for seconds)
   const date = new Date(dateStr);
   const milliseconds = date.getTime();
   const ticks = Math.round(milliseconds * 10000 + EPOCH_DIFF);
