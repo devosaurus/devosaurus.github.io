@@ -7,7 +7,7 @@ function convertTicksToDateTime(ticks) {
 }
 
 function convertDateTimeToTicks(dateStr) {
-  // dateStr format from datetime-local input: "YYYY-MM-DDTHH:mm"
+  // dateStr format from datetime-local input: "YYYY-MM-DDTHH:mm:ss" (with step="1" for seconds)
   const date = new Date(dateStr);
   const milliseconds = date.getTime();
   const ticks = Math.round(milliseconds * 10000 + EPOCH_DIFF);
@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
   tickInput.addEventListener("input", function () {
     let tick = +this.value;
 
+    if (this.value === "") {
+      resultElement.textContent = "";
+      return;
+    }
+
     if (tick === 0) return;
 
     if (!isNaN(tick)) {
@@ -28,6 +33,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
     } else {
       resultElement.textContent = "Use some valid ticks stoopid hooman!";
       return;
+    }
+  });
+  
+  // Handle global Ctrl+V paste to tickInput when no element is focused
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.key === "v" && document.activeElement === document.body) {
+      event.preventDefault();
+      navigator.clipboard.readText().then(function (text) {
+        tickInput.focus();
+        tickInput.value = text.trim();
+        // Trigger input event to update the conversion result
+        tickInput.dispatchEvent(new Event("input", { bubbles: true }));
+      }).catch(function (err) {
+        console.error("Failed to read clipboard:", err);
+      });
     }
   });
   
