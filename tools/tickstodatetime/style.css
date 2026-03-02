@@ -124,6 +124,12 @@ body.theme-black #datetimeInput {
   border-color: #3a4755;
 }
 
+body.theme-black #tickInput::placeholder,
+body.theme-black #datetimeInput::placeholder {
+  color: #8a9aaa;
+  opacity: 1;
+}
+
 body.theme-black #convertResult {
   color: #e0e0e0;
 }
